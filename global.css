@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-inter: Inter;
+
+  /* font sizes */
+  --font-size-24xl: 43px;
+  --font-size-9xl: 28px;
+
+  /* Colors */
+  --color-gray-100: #181818;
+
+  /* Paddings */
+  --padding-81xl: 100px;
+  --padding-21xl: 40px;
+}

@@ -1,0 +1,109 @@
+.t1 {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+}
+.section1,
+.section2 {
+  align-self: stretch;
+  height: 100vh;
+  padding: 0 var(--padding-81xl);
+  box-sizing: border-box;
+  justify-content: center;
+  text-align: left;
+  font-size: var(--font-size-24xl);
+  font-family: var(--font-inter);
+}
+.section1 {
+  background-color: var(--color-gray-100);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #cacaca;
+}
+.section2 {
+  background-color: #484848;
+  color: #0a0a0a;
+}
+.main,
+.section2,
+.section3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section3 {
+  align-self: stretch;
+  background-color: #b5b5b5;
+  height: 160vh;
+  padding: 0 var(--padding-81xl);
+  box-sizing: border-box;
+  justify-content: center;
+  text-align: left;
+  font-size: var(--font-size-24xl);
+  color: var(--color-gray-100);
+  font-family: var(--font-inter);
+}
+.main {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  overflow: hidden;
+  justify-content: flex-start;
+}
+@media screen and (max-width: 420px) {
+  .t1 {
+    font-size: var(--font-size-9xl);
+  }
+  .section1,
+  .section2,
+  .section3 {
+    padding-left: var(--padding-21xl);
+    padding-right: var(--padding-21xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 350px) {
+  .section1 {
+    padding-right: var(--padding-21xl);
+  }
+  .section1,
+  .section2,
+  .section3 {
+    padding-left: var(--padding-21xl);
+    box-sizing: border-box;
+  }
+  .section3 {
+    padding-right: var(--padding-21xl);
+  }
+}
+@media screen and (min-width: 1750px) {
+  .section1,
+  .section2,
+  .section3 {
+    padding-left: 20%;
+    padding-right: 20%;
+    box-sizing: border-box;
+  }
+}
+
+
+
+*::-webkit-scrollbar,
+body::-webkit-scrollbar,
+html::-webkit-scrollbar{
+  background-color: #000000;
+  height: 20px;
+  width: 20px;
+}
+
+*::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+html::-webkit-scrollbar-thumb{
+  background-color: #3b3b3b;
+  border-radius: 99em;
+  border: 6px solid;
+}

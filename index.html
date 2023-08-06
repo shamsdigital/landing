@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"
+    />
+  </head>
+  <body>
+    <main class="main" id="main">
+      <section class="section1" id="sec1">
+        <h2 class="t1" id="t1">
+          Our intuitive interface and keyboard shortcuts make it easy to manage
+          your tasks and get things done faster.
+        </h2>
+      </section>
+      <section class="section2" id="sec2">
+        <h2 class="t1" id="t2">
+          Our intuitive interface and keyboard shortcuts make it easy to manage
+          your tasks and get things done faster.
+        </h2>
+      </section>
+      <section class="section3" id="sec3">
+        <h2 class="t1" id="t3">
+          Our intuitive interface and keyboard shortcuts make it easy to manage
+          your tasks and get things done faster.
+        </h2>
+      </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script> 
+
+    <script>
+      
+      gsap.registerPlugin(ScrollTrigger)
+
+      const splitTypes = document.querySelectorAll('.t1')
+
+      splitTypes.forEach((char,i) => {
+
+        const text = new SplitType(char, { types:'chars'})
+
+        gsap.from(text.chars, {
+          scrollTrigger: {
+            trigger: char,
+            start: 'top 45%',
+            end: 'top 20%',
+            scrub: true,
+            markers:false,
+          },
+
+          opacity: 0.2,
+          stagger: 2,
+        });
+      });
+
+//for all
+      document.addEventListener("DOMContentLoaded", function () {
+  
+      const sections = gsap.utils.toArray('.section1, .section2, .section3');
+
+  
+      sections.forEach((section) => {
+       ScrollTrigger.create({
+       trigger: section,
+       start: 'top top',
+       pin: true,
+       pinSpacing: false
+    });
+  });
+});
+
+
+
+
+
+
+
+
+
+
+///////perfect one
+
+     // gsap.utils.toArray('.section1').forEach(section => {
+     //   ScrollTrigger.create({
+     //    trigger: section,
+    //     start: 'top top',
+    //     pin: true,
+     //    pinSpacing: false
+    //   });
+    // });
+
+
+      
+      const lenis = new Lenis()
+
+      lenis.on('scroll', (e) => {
+      console.log(e)
+      })
+
+      function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+      }
+
+      requestAnimationFrame(raf)
+
+
+
+    </script>
+    
+
+  </body>
+</html>
